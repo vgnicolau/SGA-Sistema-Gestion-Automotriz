@@ -4,7 +4,7 @@
 * **Nombre:** BUSCAR MECÁNICOS
 * **Como:** Usuario Cliente
 * **Puedo:** filtrar y explorar un catálogo de mecánicos según su especialidad, ubicación y calificación por estrellas.
-* **Para:** elegir al profesional más adecuado, transparente y confiable para mi problema.
+* **Para:** elegir al profesional más adecuado y confiable para mi problema.
 * **Dado que:** mi vehículo presenta una falla y necesito encontrar un taller con referencias comprobables.
 * **Cuando:** ingreso a la pantalla principal de búsqueda de la aplicación.
 * **Entonces:** el sistema me despliega una lista de perfiles ordenados por relevancia o cercanía.
