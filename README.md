@@ -1,36 +1,34 @@
-# 🚗 S.G.A. – Sistema de Gestión Automotriz
+# 🚗 S.G.A. – Sistema de Gestión Automotriz (Plataforma de Intermediación)
 
-> **Proyecto Académico:** Plataforma informática interactiva y centralizada para la optimización de servicios mecánicos.
+> **Proyecto Académico:** Plataforma digital tipo Marketplace orientada a la intermediación, transparencia y seguimiento de servicios mecánicos automotrices.
 
 ---
 
 ## 📖 INTRODUCCIÓN
 
-En el escenario económico y tecnológico actual, las pequeñas y medianas empresas dedicadas al mantenimiento y reparación automotriz se enfrentan al desafío de optimizar sus recursos para mantener su competitividad en el mercado. Tradicionalmente, la administración de los talleres mecánicos se ha caracterizado por una gestión manual, donde el registro de los diagnósticos, el control de inventarios y el seguimiento de las órdenes de trabajo se asientan en soportes físicos como cuadernos o fichas de papel. Esta falta de sistematización de la información no solo ralentiza los procesos operativos internos, sino que impacta de forma directa en el eslabón más crítico del negocio: la relación y la comunicación con el cliente.
+En el escenario tecnológico actual, la contratación de servicios de reparación y mantenimiento automotriz presenta un desafío crítico: la falta de confianza y la asimetría informativa entre el prestador del servicio y el cliente. Tradicionalmente, los usuarios se enfrentan a un mercado fragmentado donde la elección de un profesional se basa en recomendaciones verbales, careciendo de parámetros objetivos de calidad o reseñas medibles. 
 
-La ausencia de un canal de comunicación centralizado y transparente genera una asimetría informativa entre el personal técnico y los propietarios de los vehículos. Habitualmente, los clientes experimentan altos niveles de incertidumbre al desconocer el estado real de la reparación, el desglose exacto de los costos por mano de obra y repuestos, o el cumplimiento de los plazos de entrega inicialmente acordados. Esta situación se ve agravada por la alta volatilidad en los precios de los componentes automotrices, lo que vuelve indispensable contar con presupuestos precisos y dinámicos para evitar pérdidas económicas en el taller y malentendidos con los usuarios.
+Por otro lado, los mecánicos independientes y pequeños talleres carecen de herramientas digitales centralizadas para captar nuevos clientes, gestionar su demanda, enviar presupuestos vinculantes y documentar gráficamente su trabajo. Esta desconexión genera un ecosistema opaco, donde el cliente desconoce el estado real de su reparación y el mecánico sufre demoras en las aprobaciones o fricciones al momento del cobro.
 
-El presente proyecto propone el desarrollo e implementación del S.G.A. como una solución de software orientada a digitalizar y ordenar de manera integral el ciclo de vida de los servicios mecánicos en la ciudad de San Fernando del Valle de Catamarca. El sistema será desarrollado utilizando **JavaScript** como lenguaje de programación principal para estructurar una interfaz dinámica e interactiva en tiempo real, integrada con un sistema de gestión de bases de datos relacionales administrado a través de **pgAdmin** con **PostgreSQL**. Mediante esta arquitectura tecnológica, el proyecto busca transformar la gestión informal y fragmentada en un flujo de trabajo previsible, eficiente y auditable, garantizando altos estándares de control de calidad y restituyendo la confianza de los usuarios en el sector.
+El presente proyecto propone el desarrollo del S.G.A., una plataforma de intermediación (modelo Marketplace) orientada a conectar de manera directa a los propietarios de vehículos con una red de mecánicos en la ciudad de San Fernando del Valle de Catamarca. Mediante un sistema de catálogo con calificaciones, bitácora multimedia interactiva y flujos de aprobación de presupuestos, el software busca erradicar la informalidad, protegiendo tanto el poder de decisión del cliente como la integridad legal y financiera del profesional mecánico.
 
 ---
 
 ## ⚠️ DEFINICIÓN DEL PROBLEMA
 
-El problema principal es la **deficiencia en el seguimiento técnico, la comunicación y la entrega de presupuestos** durante la prestación del servicio en los talleres mecánicos.
+El problema principal es la **asimetría de información y la falta de confianza** al momento de contratar servicios mecánicos, sumado a la informalidad en el seguimiento, presupuestación y métodos de pago.
 
 ### Causas
-* Uso de un canal único o informal de comunicación con el cliente mediante mensajes de WhatsApp sueltos o llamadas que no quedan registradas.
-* Gestión manual de la información interna como anotaciones en cuadernos, carpetas o fichas de papel.
-* Errores humanos al registrar los datos del vehículo, kilometraje o las fallas detectadas.
-* Ausencia de un seguimiento del estado del trámite de reparación; el cliente no sabe si su auto está desarmado, en espera de repuestos o listo.
-* Acumulación de vehículos en el taller y priorización incorrecta de los trabajos del día.
+* Inexistencia de herramientas digitales para validar la reputación y especialidad de los mecánicos de forma objetiva (reseñas).
+* Uso de canales informales (mensajes sueltos de WhatsApp) donde el cliente no tiene evidencia visual ni documentada del problema real del vehículo.
+* Imposibilidad del usuario de rechazar o aceptar de forma auditable los arreglos adicionales que surgen durante el desarme.
+* Desorganización en la agenda de los mecánicos, lo que provoca superposición de turnos o tiempos de espera prolongados.
 
 ### Consecuencias
-* Pérdida de clientes debido a la desconfianza por demoras o cambios a último momento en los precios.
-* Imagen negativa y pérdida de prestigio del taller entre los vecinos de la zona.
-* Baja eficiencia operativa de los mecánicos por desorganización en el día a día.
-* Cuello de botella en la recepción de la información ya que el dueño o encargado se satura al centralizar todas las consultas.
-* Disminución de los ingresos económicos del negocio debido al retraso en las entregas de los vehículos.
+* Desconfianza crónica de los usuarios por temor a sobreprecios, diagnósticos erróneos o reemplazos innecesarios.
+* Pérdida de oportunidades comerciales para mecánicos capacitados que no tienen visibilidad digital.
+* Conflictos legales o quejas cuando una pieza desgastada, que el cliente no quiso cambiar, termina fallando.
+* Fricción al momento del cobro final debido a malentendidos en el presupuesto original.
 
 ---
 
@@ -69,51 +67,51 @@ El problema principal es la **deficiencia en el seguimiento técnico, la comunic
 ## 💡 JUSTIFICACIÓN
 
 **1. ¿Cuál es el problema que se necesita resolver?**
-La necesidad de implementar el S.G.A. se fundamenta en su alta viabilidad técnica y en el impacto positivo multidimensional sobre los talleres en San Fernando del Valle de Catamarca. La propuesta erradica las deficiencias causadas por flujos de comunicación fragmentados (como mensajes de texto sueltos o avisos verbales). Al centralizar la información, se eliminan las discrepancias relacionadas con los costos y el incumplimiento de fechas, estableciendo un marco de transparencia auditable.
+Resulta imperativo resolver la brecha de confianza e ineficiencia operativa que existe entre conductores y profesionales del rubro. Al centralizar la oferta y la demanda en un solo sistema, se elimina la dependencia de canales informales. La plataforma instaura un marco de transparencia auditable, donde cada diagnóstico, evidencia multimedia y presupuesto queda registrado, evitando discrepancias en los costos y resguardando a ambas partes.
 
 **2. ¿Cuál es el impacto que tiene el problema y la importancia?**
-En un contexto socioeconómico complejo con constante fluctuación en los costos de repuestos, la gestión manual es un factor de alto riesgo financiero. El software proporciona una herramienta de control preciso sobre presupuestos e insumos en tiempo real, evitando el desfasaje económico que perjudica la rentabilidad del taller y otorgando previsibilidad al cliente.
+El impacto trasciende la incomodidad administrativa; afecta directamente la economía local. La postergación de mantenimientos por desconfianza deteriora el parque automotor. La importancia de esta solución radica en la modernización del rubro, introduciendo equidad competitiva para que los buenos profesionales destaquen por su mérito (calificaciones de usuarios) y brindando a los clientes previsibilidad financiera antes y durante la reparación.
 
 **3. ¿Qué se va a realizar?**
-A nivel interno, el S.G.A. promueve una comunicación coherente que permite coordinar de forma efectiva recursos humanos y materiales. Al asignar tareas con base en la urgencia y complejidad, se disminuye la sobrecarga laboral y el apuro de último momento, traduciéndose en una ejecución técnica meticulosa.
+Se desarrollará una plataforma integral que incluirá: un motor de búsqueda parametrizado por especialidad, un módulo para la carga asíncrona de solicitudes (diferenciando servicios genéricos de diagnósticos complejos), un sistema de "Bitácora Multimedia" para documentar el desarme, y flujos de aceptación o rechazo formal de arreglos extras con exención de responsabilidad legal para el mecánico.
 
 **4. ¿Cuáles son los beneficios sociales?**
-Fundamentado en marcos teóricos sobre la interacción digital y la experiencia de usuario, la interfaz visual clara cumple una función pedagógica. Al permitir al usuario visualizar de forma gráfica, secuencial e interactiva el estado real de la reparación mediante la bitácora del sistema, se facilita la asimilación del servicio. Esto disminuye drásticamente el estrés de la incertidumbre operativa y fomenta el sentimiento de sentirse atendido y escuchado.
+Fundamentado en marcos teóricos sobre la interacción digital, la interfaz visual clara cumple una función pedagógica. Socialmente, el sistema democratiza el acceso a servicios de calidad, disminuye drásticamente el estrés de la incertidumbre operativa y restituye la confianza mediante la evidencia fotográfica de cada pieza cambiada, fomentando el sentimiento de sentirse atendido y resguardado.
 
 ---
 
 ## 📍 UBICACIÓN Y POBLACIÓN OBJETIVO
 
-* **Delimitación Espacial:** Talleres de reparación mecánica y electricidad del automotor situados en la ciudad de San Fernando del Valle de Catamarca.
+* **Delimitación Espacial:** San Fernando del Valle de Catamarca.
 * **Delimitación del Universo:** 
-  1. **Administradores:** Dueños de los talleres.
-  2. **Usuarios Técnicos:** Mecánicos encargados de las reparaciones.
-  3. **Clientes Finales:** Propietarios de autos particulares.
+  1. **Usuarios Clientes (Demanda):** Propietarios de vehículos particulares que buscan transparencia, opciones seguras y validación de calidad a través de reseñas.
+  2. **Usuarios Mecánicos (Oferta):** Profesionales independientes y dueños de talleres que buscan digitalizar su agenda, documentar su trabajo y captar nuevos clientes mediante su reputación online.
 
 ---
 
 ## 🎯 OBJETIVOS
 
 ### Objetivo General
-Diseñar, desarrollar e implementar un Sistema de Gestión Automotriz mediante una plataforma informática interactiva y centralizada, con el propósito fundamental de agilizar, optimizar y transparentar el seguimiento técnico, la presupuestación y la prestación del servicio mecánico en San Fernando del Valle de Catamarca. El proyecto busca guiar de manera ordenada el ciclo de vida completo de cada reparación vehicular, coordinando eficientemente los recursos humanos y materiales para garantizar el cumplimiento de los plazos de entrega, asegurar estándares de control de calidad y elevar los niveles de confianza.
+Diseñar, desarrollar e implementar una plataforma digital transaccional (Marketplace) orientada a la intermediación de servicios mecánicos automotrices en San Fernando del Valle de Catamarca, con el propósito de conectar clientes con profesionales, centralizar la búsqueda mediante reseñas, y automatizar el seguimiento técnico mediante evidencia multimedia, garantizando un ecosistema de total transparencia.
 
 ### Objetivos Específicos
-1. **Diseñar e implementar una base de datos relacional robusta** mediante el motor PostgreSQL (utilizando pgAdmin) para estructurar y resguardar de forma organizada el registro confidencial de clientes, datos técnicos de vehículos y el historial cronológico de reparaciones.
-2. **Desarrollar los módulos lógicos e interactivos** mediante el lenguaje JavaScript, garantizando que el procesamiento de datos de las tareas diarias, el control de estados en tiempo real y la visualización funcionen de manera fluida y segura.
-3. **Desarrollar un sistema lógico de registro de estados en tiempo real** que permita actualizar y visualizar de manera sencilla las distintas etapas del ciclo de vida de la reparación.
-4. **Programar un panel centralizado de presupuestos digitales**, donde se detallen de forma transparente y desglosada los costos asociados a la mano de obra y materiales utilizados, minimizando discrepancias al momento del cobro.
+1. **Desarrollar un módulo de búsqueda y emparejamiento** que permita a los usuarios localizar mecánicos basándose en su especialidad, ubicación y un sistema de calificaciones por estrellas.
+2. **Implementar un sistema de solicitudes y agenda** que permita a los clientes enviar evidencia preliminar, y a los mecánicos aceptar, diferir o rechazar el trabajo, asignando turnos de forma automatizada.
+3. **Programar una bitácora multimedia bidireccional** donde el mecánico documente fotográficamente el avance, y el usuario pueda visualizar el estado de su vehículo en tiempo real.
+4. **Desarrollar un flujo auditable de presupuestos variables**, que permita al mecánico sugerir arreglos extras durante la reparación, obligando al cliente a aceptarlos formalmente o rechazarlos asumiendo el riesgo (protección legal del profesional).
+5. **Estructurar una base de datos relacional robusta** (PostgreSQL) que garantice la integridad de los historiales, reseñas, turnos y perfiles de los usuarios de la plataforma.
 
 ---
 
 ## 🏗️ MARCO TEÓRICO
 
 ### 1. Gestión de Procesos y Comunicación
-* **1.1. Gestión por Procesos:** Identificación, modelado, automatización y optimización continua de los flujos de trabajo de una organización para maximizar la eficiencia. La estandarización de hitos operativos mediante software erradica la improvisación y los cuellos de botella administrativos.
-* **1.2. Asimetría Informativa y Experiencia de Usuario:** La asimetría informativa ocurre cuando el personal técnico posee mayor conocimiento que el cliente, generando desconfianza. La bitácora digital interactiva actúa como un puente pedagógico que neutraliza esta asimetría y restituye la confianza.
+* **1.1. Gestión por Procesos en Plataformas de Intermediación:** Identificación, modelado y automatización de los flujos de trabajo para maximizar la eficiencia entre distintas partes. La estandarización de hitos operativos mediante software erradica la improvisación en el ciclo de vida del servicio (desde la solicitud hasta la entrega), homogeneizando la experiencia sin importar qué mecánico preste el servicio.
+* **1.2. Asimetría Informativa y Experiencia de Usuario:** La asimetría informativa ocurre cuando el prestador posee mayor conocimiento técnico que el cliente, generando desconfianza. La bitácora digital interactiva actúa como un puente pedagógico que neutraliza esta asimetría, transparentando el estado del vehículo y desglosando los costos de repuestos.
 
 ### 2. Arquitectura de Software y Tecnologías
-* **2.1. Interfaces Dinámicas e Interactivas en Tiempo Real:** Se utiliza JavaScript debido a su naturaleza asíncrona y capacidad para gestionar eventos en el navegador, garantizando que las modificaciones de datos en el servidor se reflejen inmediatamente sin recargar la página.
-* **2.2. Sistemas de Gestión de Bases de Datos Relacionales:** Se optó por PostgreSQL (administrado mediante pgAdmin) por ser un motor robusto, escalable y con excelente soporte para transacciones complejas, garantizando la integridad referencial y seguridad de los datos.
+* **2.1. Interfaces Dinámicas e Interactivas en Tiempo Real:** Se utiliza JavaScript debido a su naturaleza asíncrona y capacidad para gestionar eventos en el navegador, garantizando que las modificaciones de datos (como la carga de fotos o el cambio de estado en la reparación) se reflejen fluidamente en el panel del cliente.
+* **2.2. Sistemas de Gestión de Bases de Datos Relacionales:** Se optó por PostgreSQL (administrado mediante pgAdmin) por ser un motor robusto y escalable, capaz de soportar transacciones complejas, garantizando la integridad referencial para vincular correctamente a los clientes, los mecánicos, los vehículos y las facturas.
 
 ### 3. Metodologías de Desarrollo
-* **3.1. Marcos de Trabajo Ágiles (Scrum):** Marco de trabajo iterativo e incremental mediante ciclos cortos llamados Sprints, asegurando que los módulos se construyan, testeen y validen de forma progresiva para minimizar riesgos de desviación.
+* **3.1. Marcos de Trabajo Ágiles (Scrum):** Marco de trabajo iterativo e incremental mediante ciclos cortos llamados Sprints, asegurando que los módulos complejos (como la pasarela de pagos o el sistema de reseñas) se construyan, testeen y validen de forma progresiva.
