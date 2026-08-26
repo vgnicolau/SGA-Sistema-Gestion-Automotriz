@@ -1,91 +1,76 @@
-# 📋 Product Backlog - Historias de Usuario
-
-A continuación se detallan las Historias de Usuario (HU) que definen el comportamiento y los requerimientos funcionales de la plataforma de intermediación mecánica, estructuradas bajo el estándar Scrum.
-
----
+# 📋 Historias de Usuario - Perfil: Usuario Cliente
 
 ### HU-01: Buscar mecánicos
 * **Nombre:** BUSCAR MECÁNICOS
 * **Como:** Usuario Cliente
-* **Puedo:** filtrar y visualizar un catálogo de mecánicos por especialidad y calificación de reseñas.
+* **Puedo:** filtrar y explorar un catálogo de mecánicos según su especialidad, ubicación y calificación por estrellas.
 * **Para:** elegir al profesional más adecuado, transparente y confiable para mi problema.
-* **Dado que:** existe una necesidad de encontrar un taller con referencias objetivas y trabajos previos comprobables.
-* **Cuando:** ingreso a la pantalla principal de la plataforma buscando asistencia técnica.
-* **Entonces:** el sistema me muestra una lista de perfiles de mecánicos ordenados por relevancia, con sus estrellas y trabajos destacados.
+* **Dado que:** mi vehículo presenta una falla y necesito encontrar un taller con referencias comprobables.
+* **Cuando:** ingreso a la pantalla principal de búsqueda de la aplicación.
+* **Entonces:** el sistema me despliega una lista de perfiles ordenados por relevancia o cercanía.
 
 ---
 
 ### HU-02: Solicitar servicio
 * **Nombre:** SOLICITAR SERVICIO
 * **Como:** Usuario Cliente
-* **Puedo:** redactar mi problema, adjuntar imágenes/audios y seleccionar si es un "Service Genérico" o una "Falla a Revisar".
-* **Para:** brindarle al mecánico la información exacta que necesita para evaluar si toma el trabajo o no.
-* **Dado que:** encontré un perfil de mecánico adecuado en el catálogo y decidí contactarlo.
-* **Cuando:** oprimo el botón de "Contactar" dentro del perfil del profesional elegido.
-* **Entonces:** se abre una nueva casilla donde cargo mi evidencia, se clasifica el tipo de solicitud y se envía a la sección de "Mensajes Nuevos" del mecánico.
+* **Puedo:** redactar mi problema, seleccionar el tipo de servicio y adjuntar archivos multimedia (fotos o audios).
+* **Para:** brindarle al profesional la información exacta que necesita para evaluar el trabajo.
+* **Dado que:** seleccioné un perfil de mecánico que me interesó dentro del catálogo.
+* **Cuando:** oprimo el botón de "Contactar" y se abre el formulario de solicitud.
+* **Entonces:** la solicitud se envía y queda registrada en mi perfil bajo el estado "Pendiente de respuesta".
 
 ---
 
-### HU-03: Gestionar solicitud recibida
-* **Nombre:** GESTIONAR SOLICITUD
-* **Como:** Usuario Mecánico
-* **Puedo:** aceptar la solicitud, aceptarla con diferimiento (tope de 1 mes) o rechazarla aclarando el motivo.
-* **Para:** organizar la demanda de mi taller sin sobrecargarme de trabajo ni comprometerme a plazos irreales.
-* **Dado que:** recibo una nueva notificación de un cliente potencial en mi bandeja de entrada.
-* **Cuando:** analizo el audio/foto y decido si tengo la capacidad técnica y temporal para hacerlo.
-* **Entonces:** selecciono una de las tres opciones; si elijo diferir, el sistema le pregunta al cliente si desea esperar esos días o si prefiere cancelar y buscar otro mecánico.
+### HU-03: Confirmar espera diferida
+* **Nombre:** CONFIRMAR ESPERA DE TURNO
+* **Como:** Usuario Cliente
+* **Puedo:** aceptar o rechazar la propuesta de atención en una fecha posterior (espera).
+* **Para:** decidir si prefiero esperar a ese mecánico en particular o cancelar para buscar otro.
+* **Dado que:** el mecánico respondió a mi solicitud indicando que tiene demora y me ofreció diferir la atención.
+* **Cuando:** recibo la notificación emergente de "Atención diferida".
+* **Entonces:** al presionar "Aceptar", conservo mi lugar en su agenda; al presionar "Rechazar", se cancela la solicitud para que pueda contactar a alguien más.
 
 ---
 
-### HU-04: Asignar turno en calendario
-* **Nombre:** ASIGNAR TURNO
-* **Como:** Usuario Mecánico
-* **Puedo:** desplegar mi calendario interno y seleccionar una fecha y hora específica para recibir el vehículo.
-* **Para:** asegurar la organización de mi día y evitar que dos clientes vengan al mismo tiempo.
-* **Dado que:** acepté formalmente la solicitud del cliente y necesitamos coordinar la entrega del auto.
-* **Cuando:** presiono el botón de agendar tras la confirmación de la solicitud.
-* **Entonces:** elijo el bloque horario en mi calendario, el cliente recibe la confirmación y el sistema programa recordatorios automáticos para ambos el día del turno.
+### HU-04: Consultar avance de reparación
+* **Nombre:** CONSULTAR AVANCE DE REPARACIÓN
+* **Como:** Usuario Cliente
+* **Puedo:** visualizar una línea de tiempo interactiva con los estados del auto y las fotos que sube el mecánico.
+* **Para:** tener un seguimiento transparente de los trabajos y las piezas que se están cambiando.
+* **Dado que:** ya entregué el vehículo en el taller y la reparación se encuentra en curso.
+* **Cuando:** abro la sección "Bitácora" de mi vehículo en la plataforma.
+* **Entonces:** veo detallado cada paso completado (ej. desarme, reparación) con su respectiva evidencia visual.
 
 ---
 
-### HU-05: Registrar bitácora multimedia
-* **Nombre:** REGISTRAR AVANCES DE REPARACIÓN
-* **Como:** Usuario Mecánico
-* **Puedo:** subir fotos del estado inicial del auto, piezas retiradas y repuestos nuevos instalados.
-* **Para:** brindar total transparencia sobre el procedimiento y justificar el cobro del servicio.
-* **Dado que:** el vehículo ya ingresó al taller y estoy realizando el desarme o reemplazo físico de componentes.
-* **Cuando:** completo una etapa crítica de la reparación.
-* **Entonces:** cargo las imágenes desde mi interfaz y el sistema actualiza inmediatamente la vista del cliente para que vea los progresos.
-
----
-
-### HU-06: Gestionar arreglos extra
+### HU-05: Gestionar arreglo extra
 * **Nombre:** GESTIONAR ARREGLO EXTRA
 * **Como:** Usuario Cliente
-* **Puedo:** aceptar o rechazar formalmente un presupuesto adicional por una falla imprevista detectada durante el desarme.
-* **Para:** tener control absoluto sobre mi gasto final y decidir qué se repara.
-* **Dado que:** el mecánico subió una evidencia de un problema no contemplado y envió el costo/tiempo adicional.
-* **Cuando:** recibo la alerta de "Requiere acción: Autorizar arreglo extra".
-* **Entonces:** si decido rechazarlo, el sistema me obliga a aceptar un aviso legal asumiendo el riesgo por el desgaste del repuesto original, el mecánico sigue con el arreglo inicial y queda eximido de futuras quejas sobre esa pieza específica.
+* **Puedo:** aprobar un presupuesto adicional o rechazarlo aceptando las condiciones legales de desgaste.
+* **Para:** tener control absoluto sobre el gasto final y decidir qué se repara en mi vehículo.
+* **Dado que:** el mecánico detectó una falla imprevista durante el desarme y me envió la alerta con el costo extra.
+* **Cuando:** presiono la notificación de "Requiere acción: Autorizar arreglo extra".
+* **Entonces:** si lo apruebo, se suma al presupuesto final; si lo rechazo, el sistema registra mi firma digital de exención de responsabilidad y la reparación original continúa.
 
 ---
 
-### HU-07: Pagar reparación
-* **Nombre:** PAGAR REPARACIÓN
+### HU-06: Pagar servicio
+* **Nombre:** PAGAR SERVICIO
 * **Como:** Usuario Cliente
-* **Puedo:** visualizar el monto total final, elegir mi método de pago (plataforma o efectivo) y coordinar el retiro.
-* **Para:** saldar mi deuda de forma cómoda y recuperar mi vehículo.
-* **Dado que:** el mecánico notificó que el auto está listo y adjuntó la factura final.
-* **Cuando:** accedo a la pasarela de pagos integrada en la aplicación.
-* **Entonces:** si pago online, se me habilita el horario de retiro; si elijo efectivo presencial, mi auto queda en estado "Pendiente de pago" y solo el mecánico, al recibir los billetes en el taller, podrá presionar el botón que libere la entrega en el sistema.
+* **Puedo:** visualizar el monto final y seleccionar si abono mediante tarjeta/transferencia en la app o en efectivo presencial.
+* **Para:** saldar mi cuenta de forma cómoda y habilitar el retiro de mi auto.
+* **Dado que:** el mecánico notificó que el trabajo está listo y generó la factura digital.
+* **Cuando:** accedo a la pasarela de pagos desde el resumen de mi orden finalizada.
+* **Entonces:** al confirmar el pago online, se me habilita coordinar el retiro; si elijo efectivo, mi auto queda "Pendiente de pago" hasta que el mecánico reciba el dinero en mano.
 
 ---
 
-### HU-08: Calificar servicio
-* **Nombre:** CALIFICAR SERVICIO
+### HU-07: Calificar atención
+* **Nombre:** CALIFICAR ATENCIÓN
 * **Como:** Usuario Cliente
-* **Puedo:** otorgar una valoración de 1 a 5 estrellas y redactar un comentario sobre la atención recibida.
-* **Para:** ayudar a otros usuarios a elegir de forma segura y premiar al buen profesional.
-* **Dado que:** el vehículo ya fue retirado del taller y la orden de trabajo se cerró exitosamente.
-* **Cuando:** ingreso a la plataforma después de haber finalizado mi experiencia con el mecánico.
-* **Entonces:** mi reseña se publica automáticamente en el perfil público del profesional, afectando su posicionamiento en el catálogo del sistema.
+* **Puedo:** otorgar una puntuación de 1 a 5 estrellas y redactar una breve reseña de mi experiencia.
+* **Para:** ayudar a otros usuarios a elegir de forma segura y retroalimentar el catálogo de la plataforma.
+* **Dado que:** el servicio ya fue abonado y retiré mi vehículo exitosamente.
+* **Cuando:** el sistema me muestra la pantalla final de cierre de la orden de trabajo.
+* **Entonces:** mi reseña se publica inmediatamente en el perfil público del profesional.
