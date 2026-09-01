@@ -227,3 +227,12 @@
 * **Dado que:** el auto está listo pero el cliente seleccionó abonar en efectivo al momento de retirarlo.
 * **Cuando:** el cliente se presenta en mi taller, me entrega el dinero en mano y presiono el botón de confirmación en la app.
 * **Entonces:** la orden se cierra exitosamente, la transacción queda guardada en mi historial de ingresos y el cliente recibe la opción de calificarme.
+
+
+
+
+
+
+
+vista de admin clientes, mapa de calor, estadisticas 
+
