@@ -125,3 +125,105 @@
 * **Dado que:** mi auto ya me fue entregado, aboné el servicio y se cerró la orden de trabajo.
 * **Cuando:** el sistema me muestra la pantalla de cierre pidiéndome mi opinión.
 * **Entonces:** mi reseña se guarda en la base de datos y aparece públicamente en el perfil de ese mecánico.
+
+
+## 📋 Product Backlog: Historias de Usuario (Perfil Mecánico)
+
+### HU-15: CREAR PERFIL DE TALLER
+* **Nombre:** CREAR PERFIL DE TALLER
+* **Como:** Usuario Mecánico
+* **Puedo:** registrar mi cuenta completando mis datos personales, los de mi taller (nombre, dirección) y mis especialidades principales.
+* **Para:** tener presencia en el catálogo público de la plataforma y empezar a recibir solicitudes de trabajo.
+* **Dado que:** soy un profesional automotriz que desea digitalizar su gestión y conseguir nuevos clientes.
+* **Cuando:** presiono el botón "Registrarse como Mecánico" en la pantalla inicial y completo el formulario.
+* **Entonces:** el sistema crea mi perfil público y me da de alta en el motor de búsqueda de la aplicación.
+
+### HU-16: INICIAR SESIÓN (MECÁNICO)
+* **Nombre:** INICIAR SESIÓN
+* **Como:** Usuario Mecánico
+* **Puedo:** ingresar a mi cuenta utilizando mi correo electrónico y contraseña.
+* **Para:** acceder a mi panel de control (Dashboard) donde gestiono mis mensajes, turnos y reparaciones activas.
+* **Dado que:** ya poseo un taller registrado y validado en la plataforma.
+* **Cuando:** introduzco mis credenciales en la pantalla de "Login para Profesionales".
+* **Entonces:** el sistema me autentica y me redirige a mi bandeja de entrada.
+
+### HU-17: VISUALIZAR BANDEJA DE ENTRADA
+* **Nombre:** VISUALIZAR SOLICITUDES
+* **Como:** Usuario Mecánico
+* **Puedo:** ver una lista de mensajes nuevos enviados por clientes, incluyendo el texto descriptivo y las fotos/audios adjuntos.
+* **Para:** evaluar el problema del vehículo antes de comprometerme a realizar el trabajo.
+* **Dado que:** un cliente me encontró en el catálogo y me envió una solicitud de servicio.
+* **Cuando:** ingreso a la sección "Bandeja de Entrada" en mi panel de control.
+* **Entonces:** el sistema me despliega las tarjetas con la información detallada de cada petición pendiente.
+
+### HU-18: ACEPTAR SOLICITUD Y AGENDAR TURNO
+* **Nombre:** AGENDAR TURNO
+* **Como:** Usuario Mecánico
+* **Puedo:** presionar el botón de "Aceptar" en una solicitud y desplegar un calendario para elegir el día y horario en que recibiré el auto.
+* **Para:** organizar mi agenda de trabajo y evitar superposición de vehículos en el taller.
+* **Dado que:** leí la solicitud de un cliente y decidí que tengo la capacidad para realizar el diagnóstico o reparación.
+* **Cuando:** selecciono una fecha y hora en el calendario emergente y confirmo la acción.
+* **Entonces:** el sistema le envía la confirmación del turno al cliente y bloquea ese espacio en mi agenda.
+
+### HU-19: DIFERIR SOLICITUD (ESPERA)
+* **Nombre:** DIFERIR SOLICITUD
+* **Como:** Usuario Mecánico
+* **Puedo:** seleccionar la opción de "Diferir" y ofrecerle al cliente atenderlo en una cantidad determinada de días (tope máximo de 1 mes).
+* **Para:** no perder el trabajo ni al cliente en momentos donde mi taller se encuentra con capacidad máxima.
+* **Dado que:** leí la solicitud del cliente, me interesa el trabajo, pero actualmente no tengo turnos disponibles.
+* **Cuando:** presiono "Atender en X días" e ingreso la cantidad de días de demora.
+* **Entonces:** la solicitud queda en estado de "Espera" hasta que el cliente confirme si acepta o rechaza mi propuesta.
+
+### HU-20: RECHAZAR SOLICITUD
+* **Nombre:** RECHAZAR SOLICITUD
+* **Como:** Usuario Mecánico
+* **Puedo:** declinar una petición de servicio escribiendo un breve motivo (ej. "No trabajo con esa marca" o "Falta de herramientas").
+* **Para:** mantener mi bandeja de entrada limpia y liberar al cliente para que busque otro profesional.
+* **Dado que:** recibí una solicitud para un tipo de trabajo que no realizo o no deseo tomar.
+* **Cuando:** presiono el botón "Rechazar" y selecciono el motivo en el menú desplegable.
+* **Entonces:** la solicitud se elimina de mi panel y el cliente es notificado de la cancelación.
+
+### HU-21: ACTUALIZAR ESTADO DE REPARACIÓN
+* **Nombre:** ACTUALIZAR ESTADO EN BITÁCORA
+* **Como:** Usuario Mecánico
+* **Puedo:** cambiar el estado de la orden de trabajo (Ej: Recepcionado, Desarmado, En Reparación, Listo) mediante botones interactivos.
+* **Para:** mantener informado al cliente en tiempo real sobre el progreso de su auto y evitar que me llame por teléfono.
+* **Dado que:** el vehículo ya ingresó a mi taller y comencé a trabajar físicamente en él.
+* **Cuando:** completo una etapa del trabajo y presiono el botón de "Avanzar fase" en el panel de la orden.
+* **Entonces:** la bitácora del cliente se actualiza automáticamente con el nuevo estado.
+
+### HU-22: CARGAR EVIDENCIA FOTOGRÁFICA
+* **Nombre:** CARGAR EVIDENCIA MULTIMEDIA
+* **Como:** Usuario Mecánico
+* **Puedo:** sacar fotos o grabar videos de las piezas rotas durante el desarme y de los repuestos nuevos instalados, y subirlas a la plataforma.
+* **Para:** justificar mi trabajo, transparentar el proceso y darle total tranquilidad al dueño del auto.
+* **Dado que:** me encuentro actualizando un estado en la bitácora de reparación del vehículo.
+* **Cuando:** presiono el icono de "Adjuntar archivo" y selecciono la imagen desde mi celular/PC.
+* **Entonces:** la foto se guarda en la base de datos y aparece disponible en la línea de tiempo del cliente.
+
+### HU-23: NOTIFICAR ARREGLO EXTRA
+* **Nombre:** NOTIFICAR ARREGLO EXTRA
+* **Como:** Usuario Mecánico
+* **Puedo:** pausar la reparación y enviarle al cliente una alerta detallando una falla imprevista junto con su costo adicional.
+* **Para:** no tomar decisiones financieras por el cliente y obtener su autorización explícita antes de cambiar una pieza no presupuestada.
+* **Dado que:** al desarmar el vehículo descubrí que un repuesto que parecía sano está a punto de romperse.
+* **Cuando:** presiono el botón "Cargar Arreglo Extra", escribo el diagnóstico, el precio y envío la alerta.
+* **Entonces:** el estado del vehículo cambia a "Esperando autorización" y no puedo avanzar hasta que el cliente acepte o firme el rechazo legal.
+
+### HU-24: CERRAR ORDEN Y FACTURAR
+* **Nombre:** CERRAR ORDEN DE TRABAJO
+* **Como:** Usuario Mecánico
+* **Puedo:** marcar el auto como "Listo", cargar el presupuesto final detallado (repuestos + mano de obra) y enviarlo.
+* **Para:** dar por finalizada mi tarea técnica y habilitar la instancia de cobro.
+* **Dado que:** terminé exitosamente todas las reparaciones, armé el vehículo y realicé las pruebas correspondientes.
+* **Cuando:** presiono el botón "Finalizar Servicio y Generar Factura".
+* **Entonces:** al cliente le llega la notificación para que proceda al pago mediante la plataforma.
+
+### HU-25: CONFIRMAR PAGO PRESENCIAL
+* **Nombre:** CONFIRMAR PAGO EN EFECTIVO
+* **Como:** Usuario Mecánico
+* **Puedo:** presionar un botón de "Pago Recibido" dentro del sistema para liberar definitivamente la orden de trabajo.
+* **Para:** tener el control final de la entrega y asegurar que el vehículo no se retire sin haber cobrado.
+* **Dado que:** el auto está listo pero el cliente seleccionó abonar en efectivo al momento de retirarlo.
+* **Cuando:** el cliente se presenta en mi taller, me entrega el dinero en mano y presiono el botón de confirmación en la app.
+* **Entonces:** la orden se cierra exitosamente, la transacción queda guardada en mi historial de ingresos y el cliente recibe la opción de calificarme.
