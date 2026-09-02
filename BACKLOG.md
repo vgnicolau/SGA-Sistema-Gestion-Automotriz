@@ -7,7 +7,7 @@
 * **Para:** tener una cuenta única y segura que me permita acceder a todos los servicios del ecosistema.
 * **Dado que:** soy un usuario nuevo que acaba de descargar o ingresar a la plataforma por primera vez.
 * **Cuando:** presiono el botón de "Registrarse" en la pantalla de inicio.
-* **Entonces:** el sistema valida que mis datos sean correctos, crea mi cuenta y me da la bienvenida.
+* **Entonces:** el sistema valida que mis datos(nombre, mail, numero de telefono) sean correctos, crea mi cuenta y me da la bienvenida.
 
 ### HU-02: INICIAR SESIÓN
 * **Nombre:** INICIAR SESIÓN
@@ -16,7 +16,7 @@
 * **Para:** acceder a mi panel personal para gestionar mis autos y ver mis turnos.
 * **Dado que:** ya poseo una cuenta registrada y validada en el sistema.
 * **Cuando:** introduzco mis credenciales en la pantalla de "Login".
-* **Entonces:** el sistema me autentica y me redirige a la pantalla principal de búsqueda.
+* **Entonces:** el sistema me autentica dichos datos ingresados cuando se creo el perfil y me redirige a la pantalla principal de búsqueda.
 
 ### HU-03: REGISTRAR VEHÍCULO
 * **Nombre:** REGISTRAR VEHÍCULO
