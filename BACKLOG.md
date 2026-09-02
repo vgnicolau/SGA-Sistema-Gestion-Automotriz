@@ -359,6 +359,98 @@
 * **Cuando:** selecciono un rango de fechas y presiono "Exportar Reporte" en el panel de métricas.
 * **Entonces:** el sistema procesa los datos y descarga el archivo estructurado en mi dispositivo.
 
+## 📋 Product Backlog: Historias de Usuario (Soporte y Configuración Específica)
+
+### HU-38: RECUPERAR CONTRASEÑA (CLIENTE)
+* **Nombre:** RECUPERAR CONTRASEÑA
+* **Como:** Usuario Cliente
+* **Puedo:** solicitar un enlace seguro de recuperación ingresando mi correo electrónico registrado.
+* **Para:** restablecer mi clave de acceso y no perder el historial de reparaciones de mis vehículos.
+* **Dado que:** olvidé mi contraseña y el sistema me impide iniciar sesión en la plataforma.
+* **Cuando:** presiono el enlace "Olvidé mi contraseña" en la pantalla de Login y envío el formulario.
+* **Entonces:** el sistema genera un token de un solo uso y me envía un correo electrónico para crear una nueva clave.
+
+### HU-39: RECUPERAR CONTRASEÑA (MECÁNICO)
+* **Nombre:** RECUPERAR CONTRASEÑA
+* **Como:** Usuario Mecánico
+* **Puedo:** solicitar un enlace seguro de recuperación ingresando el correo de mi taller.
+* **Para:** restablecer mi clave de acceso y no perder la comunicación con los clientes que tienen turnos agendados.
+* **Dado que:** olvidé mi contraseña y no puedo acceder a mi panel de trabajo.
+* **Cuando:** presiono el enlace "Olvidé mi contraseña" en el Login para Profesionales y envío el formulario.
+* **Entonces:** el sistema verifica mi identidad y me envía las instrucciones de recuperación al correo registrado.
+
+### HU-40: RECUPERAR CONTRASEÑA (ADMINISTRADOR)
+* **Nombre:** RECUPERAR CONTRASEÑA
+* **Como:** Usuario Administrador
+* **Puedo:** solicitar el blanqueo de mi clave maestra a través de un protocolo de seguridad de doble factor.
+* **Para:** recuperar el control central del sistema sin comprometer la seguridad de la base de datos.
+* **Dado que:** olvidé mi credencial de acceso al panel de Backoffice.
+* **Cuando:** ejecuto el proceso de recuperación en la ruta de administración.
+* **Entonces:** el sistema envía una alerta de seguridad y el enlace de recuperación a la casilla de correo corporativa.
+
+### HU-41: EDITAR PERFIL DE USUARIO (CLIENTE)
+* **Nombre:** EDITAR PERFIL
+* **Como:** Usuario Cliente
+* **Puedo:** modificar mis datos personales, como mi número de teléfono o correo electrónico.
+* **Para:** asegurar que los mecánicos puedan contactarme correctamente ante cualquier emergencia con mi vehículo.
+* **Dado que:** cambié mi número de celular y mi información de contacto anterior quedó obsoleta.
+* **Cuando:** ingreso a la sección "Configuración de Perfil", edito el campo telefónico y presiono "Guardar cambios".
+* **Entonces:** el sistema actualiza mis datos de contacto permanentemente en la base de datos.
+
+### HU-42: EDITAR PERFIL DE TALLER (MECÁNICO)
+* **Nombre:** EDITAR PERFIL DE TALLER
+* **Como:** Usuario Mecánico
+* **Puedo:** modificar la descripción de mi negocio, actualizar mi dirección o agregar nuevas especialidades a mi catálogo.
+* **Para:** mantener mi oferta de servicios actualizada y no perder clientes si mi taller cambia de ubicación.
+* **Dado que:** me mudé a un local nuevo o adquirí herramientas para ofrecer un servicio distinto.
+* **Cuando:** ingreso a "Editar Perfil Comercial", modifico la dirección o selecciono nuevas etiquetas y guardo los cambios.
+* **Entonces:** el catálogo público se actualiza inmediatamente mostrando mi nueva información a los clientes.
+
+### HU-43: GESTIONAR GARAJE (ELIMINAR VEHÍCULO)
+* **Nombre:** GESTIONAR GARAJE (ELIMINAR VEHÍCULO)
+* **Como:** Usuario Cliente
+* **Puedo:** dar de baja u ocultar un vehículo que había registrado previamente en mi cuenta.
+* **Para:** mantener mi lista limpia si vendí el auto y ya no requiero servicios para él.
+* **Dado que:** acabo de vender mi vehículo y ya no me corresponde gestionar sus reparaciones.
+* **Cuando:** presiono el icono de "Eliminar" junto al auto en la sección "Mi Garaje".
+* **Entonces:** el vehículo deja de aparecer como opción al solicitar un turno.
+
+### HU-44: CANCELAR TURNO PROGRAMADO (CLIENTE)
+* **Nombre:** CANCELAR TURNO PROGRAMADO
+* **Como:** Usuario Cliente
+* **Puedo:** anular un turno previamente agendado antes de la fecha de ingreso al taller.
+* **Para:** avisar con anticipación que no asistiré y evitar una calificación negativa por ausencia.
+* **Dado que:** tuve un imprevisto personal o mi auto no arranca para llevarlo en el día pactado.
+* **Cuando:** ingreso a mis turnos pendientes y presiono "Cancelar Turno" detallando el motivo.
+* **Entonces:** el turno se anula y el mecánico recibe una notificación inmediata liberando su agenda.
+
+### HU-45: CANCELAR TURNO PROGRAMADO (MECÁNICO)
+* **Nombre:** CANCELAR TURNO PROGRAMADO
+* **Como:** Usuario Mecánico
+* **Puedo:** anular un turno previamente confirmado antes de recibir físicamente el vehículo.
+* **Para:** no dejar al cliente esperando frente a un imprevisto de fuerza mayor en mi taller (ej: corte de luz, enfermedad).
+* **Dado que:** tuve una emergencia en el local y no podré operar en el día pactado.
+* **Cuando:** ubico el turno en mi calendario y presiono "Cancelar Turno" indicando la razón.
+* **Entonces:** el espacio se libera, el sistema notifica al cliente y le sugiere reprogramar o buscar otro profesional.
+
+### HU-46: VISUALIZAR NOTIFICACIONES (CLIENTE)
+* **Nombre:** VISUALIZAR NOTIFICACIONES
+* **Como:** Usuario Cliente
+* **Puedo:** acceder a un historial (icono de campana) con alertas sobre cambios de estado en mi auto o presupuestos extra.
+* **Para:** enterarme de forma rápida de las novedades de mi reparación sin revisar manualmente la bitácora.
+* **Dado que:** el mecánico actualizó el diagnóstico mientras yo no tenía la aplicación abierta.
+* **Cuando:** presiono el icono de la campana en la barra superior de la pantalla.
+* **Entonces:** se despliega una lista cronológica con las alertas y los enlaces directos a mi orden de trabajo.
+
+### HU-47: VISUALIZAR NOTIFICACIONES (MECÁNICO)
+* **Nombre:** VISUALIZAR NOTIFICACIONES
+* **Como:** Usuario Mecánico
+* **Puedo:** acceder a un panel de alertas centralizado (icono de campana) para ver nuevas solicitudes de turnos o respuestas de clientes a los presupuestos.
+* **Para:** gestionar eficientemente mi demanda sin tener que revisar cada chat individualmente.
+* **Dado que:** un cliente nuevo me contactó o aprobó un arreglo extra mientras yo estaba trabajando.
+* **Cuando:** toco la campana de notificaciones en mi panel de control.
+* **Entonces:** el sistema me muestra las últimas interacciones pendientes de lectura.
+
 
 
 
