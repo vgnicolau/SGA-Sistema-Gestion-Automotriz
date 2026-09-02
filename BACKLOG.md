@@ -126,6 +126,16 @@
 * **Cuando:** el sistema me muestra la pantalla de cierre pidiéndome mi opinión.
 * **Entonces:** mi reseña se guarda en la base de datos y aparece públicamente en el perfil de ese mecánico.
 
+### HU-04.1: BUSCAR MECÁNICOS EN MAPA
+* **Nombre:** BUSCAR MECÁNICOS EN MAPA
+* **Como:** Usuario Cliente
+* **Puedo:** visualizar un mapa interactivo con mi ubicación actual y pines que marcan a los mecánicos cercanos dentro de un radio de kilómetros modificable.
+* **Para:** encontrar rápidamente un taller que me quede cómodo geográficamente y evitar contactar por error a profesionales de otras ciudades o provincias.
+* **Dado que:** necesito asistencia y me encuentro en la pantalla de búsqueda del catálogo.
+* **Cuando:** presiono el botón "Ver en mapa" y concedo los permisos de ubicación de mi dispositivo.
+* **Entonces:** el sistema cruza mis coordenadas con la base de datos y me muestra gráficamente solo a los mecánicos locales.
+
+
 
 ## 📋 Product Backlog: Historias de Usuario (Perfil Mecánico)
 
@@ -137,6 +147,16 @@
 * **Dado que:** soy un profesional automotriz que desea digitalizar su gestión y conseguir nuevos clientes.
 * **Cuando:** presiono el botón "Registrarse como Mecánico" en la pantalla inicial y completo el formulario.
 * **Entonces:** el sistema crea mi perfil público y me da de alta en el motor de búsqueda de la aplicación.
+
+### HU-15.1: CONFIGURAR UBICACIÓN EN MAPA
+* **Nombre:** CONFIGURAR UBICACIÓN EN MAPA
+* **Como:** Usuario Mecánico
+* **Puedo:** fijar la dirección exacta de mi taller posicionando un marcador rojo (pin) sobre un mapa interactivo al momento de crear o editar mi perfil.
+* **Para:** aparecer correctamente posicionado en las búsquedas geolocalizadas de los clientes de mi zona.
+* **Dado que:** estoy configurando mi cuenta comercial para empezar a recibir solicitudes reales.
+* **Cuando:** ingreso a la sección de "Ubicación" y arrastro el marcador hasta mi calle y altura exacta.
+* **Entonces:** el sistema captura las coordenadas (latitud y longitud) del pin y las guarda permanentemente en la base de datos de mi perfil.
+
 
 ### HU-16: INICIAR SESIÓN (MECÁNICO)
 * **Nombre:** INICIAR SESIÓN
@@ -229,7 +249,115 @@
 * **Entonces:** la orden se cierra exitosamente, la transacción queda guardada en mi historial de ingresos y el cliente recibe la opción de calificarme.
 
 
+## 📋 Product Backlog: Historias de Usuario (Perfil Administrador)
 
+### HU-26: CREAR PERFIL ADMINISTRATIVO
+* **Nombre:** CREAR PERFIL ADMINISTRATIVO
+* **Como:** Usuario Administrador Maestro
+* **Puedo:** registrar una cuenta de superusuario con credenciales maestras y privilegios totales.
+* **Para:** tener el control absoluto de la plataforma, gestionar las reglas de negocio y supervisar a todos los actores del ecosistema.
+* **Dado que:** el sistema acaba de ser desplegado y no existe ninguna cuenta con permisos para moderar.
+* **Cuando:** ejecuto el registro inicial mediante la consola del servidor.
+* **Entonces:** el sistema genera una cuenta con permisos de nivel superior, diferenciándola estructuralmente de los clientes y mecánicos.
+
+### HU-27: INICIAR SESIÓN ADMINISTRATIVA
+* **Nombre:** INICIAR SESIÓN ADMINISTRATIVA
+* **Como:** Usuario Administrador
+* **Puedo:** ingresar al panel de control central (Backoffice) utilizando mi correo y contraseña.
+* **Para:** acceder a las herramientas exclusivas de moderación, métricas y gestión de usuarios.
+* **Dado que:** ya poseo una cuenta validada con rol de administrador en la base de datos.
+* **Cuando:** introduzco mis credenciales en la ruta de acceso exclusiva (ej: /admin).
+* **Entonces:** el sistema valida mis permisos y me redirige al tablero principal.
+
+### HU-28: GESTIONAR SUB-ADMINISTRADORES
+* **Nombre:** GESTIONAR SUB-ADMINISTRADORES
+* **Como:** Usuario Administrador Maestro
+* **Puedo:** crear nuevas cuentas administrativas secundarias y asignarles permisos limitados por módulos.
+* **Para:** delegar tareas de soporte y moderación a un equipo de trabajo sin comprometer la seguridad financiera.
+* **Dado que:** el volumen de usuarios creció y necesito ayuda operativa.
+* **Cuando:** ingreso a la pestaña de "Gestión de Permisos" y doy de alta un nuevo rol.
+* **Entonces:** el nuevo usuario recibe sus credenciales y solo accede a las pantallas habilitadas.
+
+### HU-29: VERIFICAR IDENTIDAD DEL MECÁNICO
+* **Nombre:** VERIFICAR IDENTIDAD
+* **Como:** Usuario Administrador
+* **Puedo:** revisar la documentación enviada por un nuevo mecánico (DNI, fotos del taller) y aprobar o rechazar su perfil.
+* **Para:** garantizar que solo profesionales legítimos ofrezcan servicios, manteniendo la seguridad del Marketplace.
+* **Dado que:** un usuario completó el formulario de registro como mecánico y está en estado "Pendiente".
+* **Cuando:** presiono "Aprobar perfil" en el panel de control de usuarios.
+* **Entonces:** el perfil se activa, se vuelve visible en el catálogo de búsqueda y se le notifica por correo.
+
+### HU-30: VISUALIZAR MAPA DE CALOR (DEMANDA)
+* **Nombre:** VISUALIZAR MAPA DE CALOR
+* **Como:** Usuario Administrador
+* **Puedo:** observar un mapa interactivo con zonas resaltadas según la concentración de solicitudes de servicio y talleres activos.
+* **Para:** analizar geográficamente la demanda y saber en qué barrios de la ciudad faltan mecánicos.
+* **Dado que:** necesito conocer las métricas de uso y distribución de la plataforma.
+* **Cuando:** ingreso a la pestaña "Geolocalización" en el panel interno.
+* **Entonces:** el sistema cruza las coordenadas y renderiza las zonas con mayor tráfico.
+
+### HU-31: SUSPENDER CUENTAS
+* **Nombre:** SUSPENDER CUENTAS
+* **Como:** Usuario Administrador
+* **Puedo:** bloquear temporal o permanentemente el acceso de un cliente o mecánico.
+* **Para:** penalizar comportamientos fraudulentos, exceso de reportes o incumplimiento de normas.
+* **Dado que:** detecté actividad sospechosa o recibí múltiples quejas sobre un usuario.
+* **Cuando:** selecciono el estado "Suspendido" dentro del perfil del usuario y redacto el motivo.
+* **Entonces:** el usuario pierde el acceso inmediatamente.
+
+### HU-32: MEDIAR DISPUTAS DE SERVICIO
+* **Nombre:** MEDIAR DISPUTAS
+* **Como:** Usuario Administrador
+* **Puedo:** acceder al historial de chat, bitácora de estados, fotos y presupuestos de una orden de trabajo específica.
+* **Para:** actuar como árbitro imparcial si un cliente denuncia un mal arreglo o un mecánico reporta falta de pago.
+* **Dado que:** un usuario generó un ticket de "Reportar problema".
+* **Cuando:** abro el ticket de soporte en el sistema de administración.
+* **Entonces:** obtengo acceso de lectura a toda la evidencia de esa reparación para emitir un fallo.
+
+### HU-33: MODERAR RESEÑAS Y COMENTARIOS
+* **Nombre:** MODERAR RESEÑAS
+* **Como:** Usuario Administrador
+* **Puedo:** ocultar o eliminar reseñas y comentarios públicos que contengan insultos, spam o información falsa.
+* **Para:** mantener un entorno respetuoso y asegurar que el catálogo de calificaciones sea objetivo.
+* **Dado que:** un sistema automático o un usuario reportó un comentario ofensivo.
+* **Cuando:** presiono el botón "Eliminar reseña" desde el panel de moderación.
+* **Entonces:** el comentario desaparece del perfil público del mecánico y se recalcula su puntaje.
+
+### HU-34: CONFIGURAR COMISIONES DE PLATAFORMA
+* **Nombre:** CONFIGURAR COMISIONES
+* **Como:** Usuario Administrador
+* **Puedo:** establecer o modificar el porcentaje de comisión que la plataforma retiene por cada pago procesado online.
+* **Para:** ajustar el modelo de negocio y garantizar la rentabilidad del software.
+* **Dado que:** necesito actualizar los márgenes de ganancia del sistema.
+* **Cuando:** ingreso el nuevo valor porcentual en la sección "Configuración Financiera" y guardo los cambios.
+* **Entonces:** todas las futuras órdenes de trabajo calcularán la retención en base a este nuevo porcentaje.
+
+### HU-35: LIQUIDAR PAGOS A MECÁNICOS
+* **Nombre:** LIQUIDAR PAGOS
+* **Como:** Usuario Administrador
+* **Puedo:** aprobar la transferencia del dinero acumulado en la plataforma hacia la cuenta bancaria (CBU/CVU) del mecánico.
+* **Para:** completar el ciclo financiero y asegurar que los profesionales reciban su dinero descontando la comisión.
+* **Dado que:** los clientes han pagado servicios mediante la pasarela online y los fondos están retenidos en el sistema.
+* **Cuando:** presiono "Aprobar Liquidación" en el panel de finanzas del mecánico.
+* **Entonces:** el sistema registra la salida de dinero y cambia el estado del saldo a "Transferido".
+
+### HU-36: GESTIONAR CATEGORÍAS Y ESPECIALIDADES
+* **Nombre:** GESTIONAR CATEGORÍAS
+* **Como:** Usuario Administrador
+* **Puedo:** crear, editar o eliminar las etiquetas de especialidades mecánicas (ej: "Inyección Electrónica", "GNC").
+* **Para:** mantener el catálogo organizado y adaptado a las nuevas necesidades del mercado automotor.
+* **Dado que:** necesito agregar un nuevo tipo de servicio que los mecánicos puedan seleccionar en sus perfiles.
+* **Cuando:** ingreso a "Gestión de Categorías", agrego el nuevo nombre y guardo.
+* **Entonces:** la nueva etiqueta queda disponible inmediatamente en los filtros de búsqueda y en el registro de mecánicos.
+
+### HU-37: GENERAR REPORTES ESTADÍSTICOS
+* **Nombre:** GENERAR REPORTES
+* **Como:** Usuario Administrador
+* **Puedo:** exportar documentos en formato PDF o Excel con el resumen de usuarios activos, turnos concretados e ingresos mensuales.
+* **Para:** presentar informes de rendimiento en defensas académicas o reuniones de negocio.
+* **Dado que:** requiero extraer la información consolidada de la base de datos.
+* **Cuando:** selecciono un rango de fechas y presiono "Exportar Reporte" en el panel de métricas.
+* **Entonces:** el sistema procesa los datos y descarga el archivo estructurado en mi dispositivo.
 
 
 
